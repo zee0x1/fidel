@@ -32,3 +32,23 @@ Run `pnpm check` to validate all three applications and `pnpm build` to prepare
 all three for production. Each command also has a project-specific variant:
 `build:client`, `build:gateway`, `build:server`, `check:client`, `check:gateway`,
 and `check:server`.
+
+## Adding dependencies
+
+Use the root shorthand for the target project:
+
+```sh
+pnpm add:client axios
+pnpm add:gateway zod
+pnpm add:server sqlalchemy
+pnpm add:root prettier
+```
+
+Append `:dev` to add a development dependency:
+
+```sh
+pnpm add:client:dev vitest
+pnpm add:gateway:dev eslint
+pnpm add:server:dev pytest
+pnpm add:root:dev prettier
+```

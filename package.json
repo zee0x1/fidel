@@ -6,6 +6,14 @@
     "node": ">=22"
   },
   "scripts": {
+    "add:root": "pnpm add --workspace-root",
+    "add:root:dev": "pnpm add --workspace-root --save-dev",
+    "add:client": "pnpm --filter @fidel/client add",
+    "add:client:dev": "pnpm --filter @fidel/client add --save-dev",
+    "add:gateway": "pnpm --filter @fidel/gateway add",
+    "add:gateway:dev": "pnpm --filter @fidel/gateway add --save-dev",
+    "add:server": "uv add --directory apps/server",
+    "add:server:dev": "uv add --directory apps/server --dev",
     "dev": "concurrently --kill-others --names server,gateway,client --prefix-colors blue,magenta,cyan \"pnpm dev:server\" \"pnpm dev:gateway\" \"pnpm dev:client\"",
     "dev:server": "uv run --directory apps/server uvicorn main:app --reload --port 8000",
     "dev:gateway": "pnpm --filter @fidel/gateway dev",
