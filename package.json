@@ -1,0 +1,19 @@
+{
+  "name": "fidel",
+  "private": true,
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others --names server,gateway,client --prefix-colors blue,magenta,cyan \"pnpm dev:server\" \"pnpm dev:gateway\" \"pnpm dev:client\"",
+    "dev:server": "uv run --directory apps/server uvicorn main:app --reload --port 8000",
+    "dev:gateway": "pnpm --filter @fidel/gateway dev",
+    "dev:client": "pnpm --filter @fidel/client dev",
+    "build": "pnpm --recursive --if-present build",
+    "check": "pnpm --recursive --if-present typecheck"
+  },
+  "devDependencies": {
+    "concurrently": "latest"
+  }
+}

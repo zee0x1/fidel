@@ -1,0 +1,19 @@
+# JavaScript
+node_modules/
+dist/
+.output/
+.tanstack/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environment and editor files
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/

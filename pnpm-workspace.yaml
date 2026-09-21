@@ -1,0 +1,7 @@
+packages:
+  - "apps/gateway"
+  - "apps/client"
+
+allowBuilds:
+  esbuild: true
+  lightningcss: true
