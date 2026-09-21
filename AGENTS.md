@@ -15,6 +15,7 @@
 
 ## Development
 
+- Agents must never create, amend, or otherwise modify Git commits anywhere in this monorepo. Leave all changes uncommitted for the user to review and commit.
 - `pnpm dev` starts all applications.
 - `pnpm dev:client`, `pnpm dev:gateway`, and `pnpm dev:server` start one application.
 - Client, gateway, and server use ports 3000, 3001, and 8000 respectively.
