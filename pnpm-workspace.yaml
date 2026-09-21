@@ -3,5 +3,7 @@ packages:
   - "apps/client"
 
 allowBuilds:
+  '@whiskeysockets/baileys': true
   esbuild: true
   lightningcss: true
+  protobufjs: true
