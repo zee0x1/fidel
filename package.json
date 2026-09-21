@@ -10,8 +10,14 @@
     "dev:server": "uv run --directory apps/server uvicorn main:app --reload --port 8000",
     "dev:gateway": "pnpm --filter @fidel/gateway dev",
     "dev:client": "pnpm --filter @fidel/client dev",
-    "build": "pnpm --recursive --if-present build",
-    "check": "pnpm --recursive --if-present typecheck"
+    "build": "pnpm --recursive --if-present build && pnpm build:server",
+    "build:client": "pnpm --filter @fidel/client build",
+    "build:gateway": "pnpm --filter @fidel/gateway build",
+    "build:server": "uv sync --directory apps/server --locked --no-dev",
+    "check": "pnpm --recursive --if-present typecheck && pnpm check:server",
+    "check:client": "pnpm --filter @fidel/client typecheck",
+    "check:gateway": "pnpm --filter @fidel/gateway typecheck",
+    "check:server": "uv run --directory apps/server python -m compileall -q main.py"
   },
   "devDependencies": {
     "concurrently": "latest"

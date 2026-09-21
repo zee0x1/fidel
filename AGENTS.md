@@ -22,6 +22,6 @@
 
 ## Validation
 
-- Run `pnpm check` after JavaScript or TypeScript changes.
-- Run `uv run --directory apps/server python -m compileall .` after Python changes.
+- Run `pnpm check` after cross-project changes.
+- Use `pnpm check:client`, `pnpm check:gateway`, or `pnpm check:server` for one application.
 - Run `pnpm build` before considering cross-app changes complete.

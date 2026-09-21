@@ -28,4 +28,7 @@ pnpm dev
 | Gateway | http://localhost:3001/health | `pnpm dev:gateway` |
 | Server | http://localhost:8000/health | `pnpm dev:server` |
 
-Run `pnpm check` for TypeScript validation and `pnpm build` for production builds.
+Run `pnpm check` to validate all three applications and `pnpm build` to prepare
+all three for production. Each command also has a project-specific variant:
+`build:client`, `build:gateway`, `build:server`, `check:client`, `check:gateway`,
+and `check:server`.
