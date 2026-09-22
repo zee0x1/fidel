@@ -1,15 +1,19 @@
-import express from 'express'
+import express from "express";
 
-const app = express()
-const port = Number(process.env.PORT ?? 3001)
+import { startWhatsApp } from "./whatsapp.js";
 
-app.disable('x-powered-by')
-app.use(express.json())
+const app = express();
+const port = Number(process.env.PORT ?? 3001);
 
-app.get('/health', (_request, response) => {
-  response.json({ status: 'ok', service: 'gateway' })
-})
+app.disable("x-powered-by");
+app.use(express.json());
+
+app.get("/health", (_request, response) => {
+  response.json({ status: "ok", service: "gateway" });
+});
 
 app.listen(port, () => {
-  console.log(`Gateway listening on http://localhost:${port}`)
-})
+  console.log(`Gateway listening on http://localhost:${port}`);
+});
+
+await startWhatsApp();

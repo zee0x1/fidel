@@ -3,6 +3,7 @@ node_modules/
 dist/
 .output/
 .tanstack/
+auth_info/
 
 # Python
 .venv/
