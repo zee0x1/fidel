@@ -12,6 +12,8 @@
 - Use uv for all Python packages and commands.
 - Run shared commands from the repository root when a root script exists.
 - Do not add a second pnpm workspace file below the repository root.
+- Add dependencies with the root shorthands: `pnpm add:client <package>`, `pnpm add:gateway <package>`, `pnpm add:server <package>`, or `pnpm add:root <package>`.
+- Append `:dev` to an add shorthand for a development dependency, such as `pnpm add:gateway:dev eslint`.
 
 ## Development
 
